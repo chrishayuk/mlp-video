@@ -7,8 +7,4 @@ requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.8.0",
     "mlx>=0.30.1",
-    "chuk-lazarus",
 ]
-
-[tool.uv.sources]
-chuk-lazarus = { path = "../chuk-mlx", editable = true }

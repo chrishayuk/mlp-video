@@ -5,8 +5,7 @@ from pathlib import Path
 import mlx.core as mx
 
 from classifiers import LinearClassifier
-from chuk_lazarus.data import ClassificationDataset
-from chuk_lazarus.training import evaluate, predict, train_classifier
+from training import ClassificationDataset, evaluate, predict, train_classifier
 
 DATA_PATH = Path(__file__).parent / "output" / "exam_moons.csv"
 
