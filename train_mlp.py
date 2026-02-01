@@ -41,7 +41,9 @@ def main():
         features = [cw / 100, ex / 100]
         logits = model(mx.array([features]))[0]
         label, conf = predict(model, features)
-        print(f"  ({cw}, {ex}) -> logits: [{float(logits[0]):.2f}, {float(logits[1]):.2f}] -> {'Pass' if label else 'Fail'} ({conf:.1%})")
+        print(
+            f"  ({cw}, {ex}) -> logits: [{float(logits[0]):.2f}, {float(logits[1]):.2f}] -> {'Pass' if label else 'Fail'} ({conf:.1%})"
+        )
 
 
 if __name__ == "__main__":

@@ -26,11 +26,19 @@ def make_exam_scores_linear(n=1500, seed=0):
 
     # Generate clusters: two passing, two failing
     # Pass clusters (average > 55)
-    c1 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array([80.0, 80.0])  # avg 80
-    c2 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array([60.0, 70.0])  # avg 65
+    c1 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array(
+        [80.0, 80.0]
+    )  # avg 80
+    c2 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array(
+        [60.0, 70.0]
+    )  # avg 65
     # Fail clusters (average < 55)
-    c3 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array([30.0, 30.0])  # avg 30
-    c4 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array([40.0, 50.0])  # avg 45
+    c3 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array(
+        [30.0, 30.0]
+    )  # avg 30
+    c4 = mx.random.normal((n4, 2), loc=0.0, scale=8.0) + mx.array(
+        [40.0, 50.0]
+    )  # avg 45
 
     X = mx.concatenate([c1, c2, c3, c4], axis=0)
 
@@ -96,11 +104,15 @@ def plot_dataset(X, y, output_path):
     y_np = np.array(y)
 
     plt.figure(figsize=(8, 6))
-    plt.scatter(X_np[y_np == 0, 0], X_np[y_np == 0, 1], c='red', label='Fail', alpha=0.6)
-    plt.scatter(X_np[y_np == 1, 0], X_np[y_np == 1, 1], c='blue', label='Pass', alpha=0.6)
-    plt.xlabel('Coursework')
-    plt.ylabel('Exam')
-    plt.title('Exam Scores Dataset')
+    plt.scatter(
+        X_np[y_np == 0, 0], X_np[y_np == 0, 1], c="red", label="Fail", alpha=0.6
+    )
+    plt.scatter(
+        X_np[y_np == 1, 0], X_np[y_np == 1, 1], c="blue", label="Pass", alpha=0.6
+    )
+    plt.xlabel("Coursework")
+    plt.ylabel("Exam")
+    plt.title("Exam Scores Dataset")
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.savefig(output_path)
